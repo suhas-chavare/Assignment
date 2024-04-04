@@ -1,0 +1,19 @@
+Q.3) HashWrite a Java Program to count the number of words in a string usingMap.
+
+Answer-
+import java.util.HashMap;
+
+public class WordCounter {
+    public static void main(String[] args) {
+        String str = "This is a sample string with some words. Words will be counted.";
+        String[] words = str.trim().split("\\s+");
+        
+        HashMap<String, Integer> wordCountMap = new HashMap<>();
+
+        for (String word : words) {
+            wordCountMap.put(word, wordCountMap.getOrDefault(word, 0) + 1);
+        }
+        
+        System.out.println("Number of words in the string: " + wordCountMap.size());
+    }
+}
